@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_login_facebook_ntt'
-  s.version          = '0.1.0'
+  s.version          = '1.0.3'
   s.summary          = 'Login via Facebook for Flutter projects.'
   s.description      = <<-DESC
 Login via Facebook for Flutter projects.
@@ -16,7 +16,7 @@ Login via Facebook for Flutter projects.
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
   s.dependency 'FBSDKLoginKit', '~> 7.0'
-  s.platform = :ios, '9.0'
+  s.platform = :ios, '10.0'
 
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'VALID_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
