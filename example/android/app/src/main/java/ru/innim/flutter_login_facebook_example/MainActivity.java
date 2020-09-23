@@ -1,4 +1,4 @@
-package ru.innim.flutter_login_facebook_example;
+package com.ntt.flutter_login_facebook_ntt_example;
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity;

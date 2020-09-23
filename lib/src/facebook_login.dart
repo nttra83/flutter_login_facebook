@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_login_facebook/flutter_login_facebook.dart';
-import 'package:flutter_login_facebook/src/models/facebook_permission.dart';
+
+import '../flutter_login_facebook_ntt.dart';
 
 /// Class for implementing login via Facebook.
 class FacebookLogin {
@@ -19,8 +19,7 @@ class FacebookLogin {
   static const _widthArg = "width";
   static const _heightArg = "height";
 
-  static const MethodChannel _channel =
-      const MethodChannel('flutter_login_facebook');
+  static const MethodChannel _channel = const MethodChannel('flutter_login_facebook_ntt');
 
   /// If `true` all requests and results will be printed in console.
   final bool debug;
@@ -30,12 +29,9 @@ class FacebookLogin {
   }
 
   Future<FacebookAccessToken> get accessToken async {
-    final Map<dynamic, dynamic> tokenData =
-        await _channel.invokeMethod(_methodGetAccessToken);
+    final Map<dynamic, dynamic> tokenData = await _channel.invokeMethod(_methodGetAccessToken);
 
-    return tokenData != null
-        ? FacebookAccessToken.fromMap(tokenData.cast<String, dynamic>())
-        : null;
+    return tokenData != null ? FacebookAccessToken.fromMap(tokenData.cast<String, dynamic>()) : null;
   }
 
   /// Returns currently used Facebook SDK.
@@ -59,13 +55,11 @@ class FacebookLogin {
     }
 
     try {
-      final Map<dynamic, dynamic> profileData =
-          await _channel.invokeMethod(_methodGetUserProfile);
+      final Map<dynamic, dynamic> profileData = await _channel.invokeMethod(_methodGetUserProfile);
 
       if (debug) _log('User profile: $profileData');
 
-      if (profileData != null)
-        return FacebookUserProfile.fromMap(profileData.cast<String, dynamic>());
+      if (profileData != null) return FacebookUserProfile.fromMap(profileData.cast<String, dynamic>());
     } on PlatformException catch (e) {
       if (debug) _log('Get profile error: $e');
     }
@@ -140,9 +134,7 @@ class FacebookLogin {
   /// [permissions] Array of read permissions. Default: `[FacebookPermission.publicProfile]`
   /// If required permission is not in enum [FacebookPermission], than use [customPermissions].
   Future<FacebookLoginResult> logIn(
-      {List<FacebookPermission> permissions = const [
-        FacebookPermission.publicProfile
-      ],
+      {List<FacebookPermission> permissions = const [FacebookPermission.publicProfile],
       List<String> customPermissions}) async {
     assert(permissions != null);
 
@@ -150,8 +142,8 @@ class FacebookLogin {
     if (customPermissions != null) permissionsArg.addAll(customPermissions);
 
     if (debug) _log('Log In with permissions $permissionsArg');
-    final Map<dynamic, dynamic> loginResultData = await _channel
-        .invokeMethod(_methodLogIn, {_permissionsArg: permissionsArg});
+    final Map<dynamic, dynamic> loginResultData =
+        await _channel.invokeMethod(_methodLogIn, {_permissionsArg: permissionsArg});
 
     if (debug) _log('Result: $loginResultData');
     return FacebookLoginResult.fromMap(loginResultData.cast<String, dynamic>());
@@ -162,8 +154,7 @@ class FacebookLogin {
     return _channel.invokeMethod(_methodLogOut);
   }
 
-  bool _isLoggedIn(FacebookAccessToken token) =>
-      token != null && DateTime.now().isBefore(token.expires);
+  bool _isLoggedIn(FacebookAccessToken token) => token != null && DateTime.now().isBefore(token.expires);
 
   void _log(String message) {
     if (debug) debugPrint('[FB] $message');

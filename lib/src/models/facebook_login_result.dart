@@ -1,5 +1,4 @@
-import 'package:flutter_login_facebook/flutter_login_facebook.dart';
-import 'package:flutter_login_facebook/src/models/facebook_error.dart';
+import '../../flutter_login_facebook_ntt.dart';
 
 /// Login status.
 enum FacebookLoginStatus { Success, Cancel, Error }
@@ -16,13 +15,9 @@ class FacebookLoginResult {
 
   FacebookLoginResult.fromMap(Map<String, dynamic> map)
       : status = _parseStatus(map['status']),
-        accessToken = map['accessToken'] != null
-            ? FacebookAccessToken.fromMap(
-                map['accessToken'].cast<String, dynamic>())
-            : null,
-        error = map['error'] != null
-            ? FacebookError.fromMap(map['error'].cast<String, dynamic>())
-            : null;
+        accessToken =
+            map['accessToken'] != null ? FacebookAccessToken.fromMap(map['accessToken'].cast<String, dynamic>()) : null,
+        error = map['error'] != null ? FacebookError.fromMap(map['error'].cast<String, dynamic>()) : null;
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -55,10 +50,8 @@ class FacebookLoginResult {
           error == other.error;
 
   @override
-  int get hashCode =>
-      status.hashCode ^ accessToken?.hashCode ?? 0 ^ error?.hashCode ?? 0;
+  int get hashCode => status.hashCode ^ accessToken?.hashCode ?? 0 ^ error?.hashCode ?? 0;
 
   @override
-  String toString() =>
-      'FacebookLoginResult(status: $status, accessToken: $accessToken, error: $error)';
+  String toString() => 'FacebookLoginResult(status: $status, accessToken: $accessToken, error: $error)';
 }

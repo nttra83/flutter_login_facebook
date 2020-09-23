@@ -1,4 +1,4 @@
-package ru.innim.flutter_login_facebook;
+package com.ntt.flutter_login_facebook_ntt;
 
 import com.facebook.AccessToken;
 import com.facebook.FacebookException;

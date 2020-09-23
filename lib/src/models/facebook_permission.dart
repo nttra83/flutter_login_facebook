@@ -112,6 +112,10 @@ enum FacebookPermission {
   /// Provides the access to manage call to actions of the Pages that you manage.
   pagesManageCta,
 
+  pagesManage,
+
+  pagesPublish,
+
   /// Lets your app manage Instant Articles on behalf of Facebook Pages administered by people using your app.
   pagesManageInstantArticles,
 
@@ -154,12 +158,12 @@ final _mapToString = {
   FacebookPermission.userWorkHistory: "user_work_history",
   FacebookPermission.readCustomFriendlists: "read_custom_friendlists",
   FacebookPermission.readInsights: "read_insights",
-  FacebookPermission.readAudienceNetworkInsights:
-      "read_audience_network_insights",
+  FacebookPermission.readAudienceNetworkInsights: "read_audience_network_insights",
   FacebookPermission.readPageMailboxes: "read_page_mailboxes",
   FacebookPermission.pagesShowList: "pages_show_list",
   FacebookPermission.pagesManageCta: "pages_manage_cta",
-  FacebookPermission.pagesManageInstantArticles:
-      "pages_manage_instant_articles",
+  FacebookPermission.pagesManage: "manage_pages",
+  FacebookPermission.pagesPublish: "publish_pages",
+  FacebookPermission.pagesManageInstantArticles: "pages_manage_instant_articles",
   FacebookPermission.adsRead: "ads_read",
 };

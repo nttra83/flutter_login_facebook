@@ -16,7 +16,7 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-  - flutter_login_facebook (from `.symlinks/plugins/flutter_login_facebook/ios`)
+  - flutter_login_facebook_ntt (from `.symlinks/plugins/flutter_login_facebook_ntt/ios`)
 
 SPEC REPOS:
   trunk:
@@ -26,14 +26,14 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  flutter_login_facebook:
-    :path: ".symlinks/plugins/flutter_login_facebook/ios"
+  flutter_login_facebook_ntt:
+    :path: ".symlinks/plugins/flutter_login_facebook_ntt/ios"
 
 SPEC CHECKSUMS:
   FBSDKCoreKit: 8ad31cd09f793d1d7e84cf20fd6cebfe80ad318d
   FBSDKLoginKit: 5d1e321dc45ab1fa09198b77fc17c32a06f008c0
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  flutter_login_facebook: 7f2123e68cbe29ec9483b7a1111a9f6016ab24ab
+  flutter_login_facebook_ntt: 7f2123e68cbe29ec9483b7a1111a9f6016ab24ab
 
 PODFILE CHECKSUM: c34e2287a9ccaa606aeceab922830efb9a6ff69a
 

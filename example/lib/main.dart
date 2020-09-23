@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_login_facebook/flutter_login_facebook.dart';
+import 'package:flutter_login_facebook_ntt/flutter_login_facebook_ntt.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -65,8 +65,8 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  Widget _buildUserInfo(BuildContext context, FacebookUserProfile profile,
-      FacebookAccessToken accessToken, String email) {
+  Widget _buildUserInfo(
+      BuildContext context, FacebookUserProfile profile, FacebookAccessToken accessToken, String email) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -125,8 +125,7 @@ class _MyAppState extends State<MyApp> {
 
     if (token != null) {
       profile = await plugin.getUserProfile();
-      if (token.permissions?.contains(FacebookPermission.email.name) ?? false)
-        email = await plugin.getUserEmail();
+      if (token.permissions?.contains(FacebookPermission.email.name) ?? false) email = await plugin.getUserEmail();
       imageUrl = await plugin.getProfileImageUrl(width: 100);
     }
 

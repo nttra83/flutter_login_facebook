@@ -3,15 +3,15 @@
 # Run `pod lib lint flutter_login_facebook.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'flutter_login_facebook'
+  s.name             = 'flutter_login_facebook_ntt'
   s.version          = '0.1.0'
   s.summary          = 'Login via Facebook for Flutter projects.'
   s.description      = <<-DESC
 Login via Facebook for Flutter projects.
                        DESC
-  s.homepage         = 'https://github.com/Innim/flutter_login_facebook'
+  s.homepage         = 'https://github.com/nttra83/flutter_login_facebook'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Innim' => 'info@innim.ru' }
+  s.author           = { 'ntt' => 'info@gmail.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'

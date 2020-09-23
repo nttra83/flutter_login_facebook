@@ -1,4 +1,4 @@
-group 'ru.innim.flutter_login_facebook'
+group 'com.ntt.flutter_login_facebook_ntt'
 version '1.0'
 
 buildscript {

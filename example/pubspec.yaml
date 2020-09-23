@@ -1,5 +1,5 @@
-name: flutter_login_facebook_example
-description: Demonstrates how to use the flutter_login_facebook plugin.
+name: flutter_login_facebook_ntt_example
+description: Demonstrates how to use the flutter_login_facebook_ntt plugin.
 version: 1.0.0
 
 environment:
@@ -9,7 +9,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  flutter_login_facebook:
+  flutter_login_facebook_ntt:
     path: ../
 
   # The following adds the Cupertino Icons font to your application.

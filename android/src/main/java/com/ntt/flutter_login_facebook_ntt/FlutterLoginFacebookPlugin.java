@@ -1,4 +1,4 @@
-package ru.innim.flutter_login_facebook;
+package com.ntt.flutter_login_facebook_ntt;
 
 import com.facebook.CallbackManager;
 import com.facebook.login.LoginManager;
@@ -12,7 +12,7 @@ import io.flutter.plugin.common.PluginRegistry.Registrar;
 
 /** FlutterLoginFacebookPlugin */
 public class FlutterLoginFacebookPlugin implements FlutterPlugin, ActivityAware {
-    private static final String _CHANNEL_NAME = "flutter_login_facebook";
+    private static final String _CHANNEL_NAME = "flutter_login_facebook_ntt";
 
     private MethodChannel _dartChannel;
 
